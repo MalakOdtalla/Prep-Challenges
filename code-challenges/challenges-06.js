@@ -21,7 +21,6 @@ const findMax = (arr)=>{
     }
     return max;
 }
-console.log(findMax(arr));
 // -------------------------------------------------------------------------------------------------------
 
 // -------------------------------------------------------------------------------------------------------
@@ -34,27 +33,23 @@ console.log(findMax(arr));
 // Input: [20, '234', 'car', 41, 20, 'chair']
 // Output: 81
 //  
-let array=[20, '234', 'car', 41, 20, 'chair'];
-let sum_of_num=[];
 
-const sumNums = (arr1,arr2)=>{
+
+const sumNums = (arr)=>{
     let sum=0;
     // write your code here
     
-    for (let i = 0; i < arr1.length; i++){
-        if(typeof arr1[i]==='number'){
+    for (let i = 0; i < arr.length; i++){
+        if(typeof arr[i]==='number'){
           
-            arr2.push(arr1[i]);
+            sum += arr[i];
     
-         } 
+         }  
         }
-    for (let i = 0; i < arr2.length; i++){
-            sum += arr2[i]; 
-         }
+
 
     return sum;
 }
-console.log(sumNums(array,sum_of_num)); 
 
 // -------------------------------------------------------------------------------------------------------
 
