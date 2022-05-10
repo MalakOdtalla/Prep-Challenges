@@ -64,7 +64,22 @@ const LastWord_2 = (str) => {
 
 const replaceWords = (str) => {
 let words=str.split(/[\s,]+/);
+for (let i = 0; i < words.length; i++){
+    if (words[i]==="I"  ){
+        words.splice(words.indexOf(words[i]), 1, 'We');
 
+    }else if(words[i]==="am"){
+        words.splice(words.indexOf(words[i]), 1, 'are');
+
+    }else if(words[i]==="was"){
+        words.splice(words.indexOf(words[i]), 1, 'were');
+
+    }
+  
+}
+let string=words+"";
+string=string.replaceAll(',', ' ');
+return string;
 }
 // -------------------------------------------------------------------------------------------------------
 
