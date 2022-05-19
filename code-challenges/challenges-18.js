@@ -16,18 +16,9 @@
 
 const wordLength = (str) => {
     // write your code here
-    let position;
-    let length;
-    
-    if(str.length % 2 == 1) {
-        position = str.length / 2;
-        length = 1;
-    } else {
-        position = str.length / 2 - 1;
-        length = 2;
-    }
-    
-    result = (str.substring(position, position + length)).length
+    let arr= str.split(' ')
+    let middle = arr[Math.round((arr.length - 1) / 2)];
+    let result=middle.length
     return result
 }
 // -------------------------------------------------------------------------------------------------------
@@ -52,19 +43,12 @@ const wordLength = (str) => {
 // Input: "cat", "rat"
 // Output: false
 
+function cleanString(str) {
+    return str.replace(/[^\w]/g).toLowerCase().split('').sort().join()
+}   
 const wordLetters = (str1, str2) => {
     // write your code here
-    if (str2.length == 0)
-    return true;
-
-if (str1.length == 0)
-    return false;
- 
-if (str1[0] == str2[0])
-    return wordLetters(str1.substring(1),
-    str2.substring(1));
-else
-    return wordLetters(str1.substring(1),str2);
+    return cleanString(str1) === cleanString(str2);
 }
 // -------------------------------------------------------------------------------------------------------
 
