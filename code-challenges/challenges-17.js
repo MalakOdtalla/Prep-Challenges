@@ -48,8 +48,11 @@ const recursionPattern = (int1, int2) => {
 
 const filterLinks = (str) => {
     // write your code here
-    let Text = str.replace(/<[^>]+>/g, '');
-return Text;
+    let patt = /<a[^>]*href=["']([^"']*)["']/g;
+    let match=patt.exec(str);
+    
+    let result = match[1].replace(/(^\w+:|^)\/\//, ''); 
+return result;
 }
 // -------------------------------------------------------------------------------------------------------
 
@@ -69,6 +72,11 @@ return Text;
 
 const isPalindrome = (str) => {
     // write your code here
+    let re = /[\W_]/g; 
+    let lowRegStr = str.toLowerCase().replace(re, '');
+    let reverseStr = lowRegStr.split('').reverse().join(''); 
+ 
+    return reverseStr === lowRegStr; 
 }
 // -------------------------------------------------------------------------------------------------------
 
